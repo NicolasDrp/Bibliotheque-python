@@ -1,7 +1,7 @@
 livre = [
     {
         "Titre": "Batman",
-        "Auteur": "Kelkun"
+        "Auteur": "Alfredo"
     },
     {
         "Titre": "Akhy potter",
@@ -28,7 +28,7 @@ def supprimer_livre(titre):
 # Fonction qui permet à l'utilisateur de rechercher un livre dans la bibliotheque a partir de son titre
 def Rechercher_livre_titre(titre):
     for i in livre:
-        if i["Titre"].lower() == titre.lower():
+        if titre.lower() in i["Titre"].lower():
             print(i["Titre"]+" : "+i["Auteur"])
 
 # Fonction qui permet à l'utilisateur de trier les livres de la bibliotheque a partir de leurs titres
@@ -39,7 +39,8 @@ def Trier_livre_titre():
             if livre[j]["Titre"] > livre[j+1]["Titre"]:
                 livre[j], livre[j+1] = livre[j+1], livre[j]
 
-    print(f"Tri des livres par titre: {livre}")
+    print("Tri des livres par titre :")
+    afficher_livres()
 
 # Fonction qui permet à l'utilisateur de trier les livres de la bibliotheque a partir de leurs auteurs
 def Trier_livre_auteur():
@@ -49,7 +50,8 @@ def Trier_livre_auteur():
             if livre[j]["Auteur"] > livre[j+1]["Auteur"]:
                 livre[j], livre[j+1] = livre[j+1], livre[j]
 
-    print(f"Tri des livres par auteur: {livre}")
+    print("Tri des livres par auteur :")
+    afficher_livres()
 
 # Fonction qui permet à l'utilisateur de choisir si il veut continuer ou arreter le programme
 def choix_menu():
